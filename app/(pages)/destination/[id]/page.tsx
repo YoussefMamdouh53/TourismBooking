@@ -2,14 +2,13 @@ import { fetchDestinationById } from '@/services/apiService';
 import { Destination } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation'; // For 404
+import { notFound } from 'next/navigation'; 
 
 interface DestinationDetailPageProps {
-  params: { id: number };
+  id: number;
 }
 
-export default async function DestinationDetailPage({ params }: DestinationDetailPageProps) {
-  const { id } = params;
+export default async function DestinationDetailPage({ id }: DestinationDetailPageProps) {
   let destination: Destination | null = null;
   let error: string | null = null;
 
