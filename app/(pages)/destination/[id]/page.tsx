@@ -71,22 +71,3 @@ export default async function DestinationDetailPage({ params }: DestinationDetai
     </div>
   );
 }
-
-// Optional: Loading UI
-// app/(pages)/destinations/[id]/loading.tsx
-export function Loading() {
-  return <div className="text-center py-10">Loading destination details...</div>;
-}
-
-// Optional: Error UI
-// app/(pages)/destinations/[id]/error.tsx
-// "use client"; // Error components must be Client Components
-// export default function Error({ error, reset }: { error: Error; reset: () => void; }) {
-//   return (
-//     <div>
-//       <h2>Something went wrong loading the destination!</h2>
-//       <p>{error.message}</p>
-//       <button onClick={() => reset()}>Try again</button>
-//     </div>
-//   );
-// }
