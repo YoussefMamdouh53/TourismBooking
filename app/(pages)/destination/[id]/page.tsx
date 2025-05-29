@@ -1,4 +1,3 @@
-// app/(pages)/destinations/[id]/page.tsx
 import { fetchDestinationById } from '@/services/apiService';
 import { Destination } from '@/types';
 import Image from 'next/image';
@@ -6,10 +5,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation'; // For 404
 
 interface DestinationDetailPageProps {
-  params: { id: string };
+  params: { id: number };
 }
 
-// This page can be a Server Component
 export default async function DestinationDetailPage({ params }: DestinationDetailPageProps) {
   const { id } = params;
   let destination: Destination | null = null;
@@ -35,9 +33,6 @@ export default async function DestinationDetailPage({ params }: DestinationDetai
   }
 
   if (!destination) {
-    // This should be caught by notFound() ideally if API returns 404 correctly
-    // or if fetchDestinationById throws an error that leads to notFound().
-    // This is a fallback.
     notFound();
   }
 
@@ -62,10 +57,8 @@ export default async function DestinationDetailPage({ params }: DestinationDetai
         <div className="prose max-w-none text-gray-700 mb-6">
           <p>{destination.description}</p>
         </div>
-        <Link href={`/new-booking?destinationId=${destination.id}`} legacyBehavior>
-          <a className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+        <Link href={`/new-booking?destinationId=${destination.id}`} className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
             Book This Destination
-          </a>
         </Link>
       </div>
     </div>
