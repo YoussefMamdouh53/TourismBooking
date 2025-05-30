@@ -20,6 +20,3 @@
     * Tailwind CSS
     * Axios
     * React Hook Form & Zod
-* **Deployment:**
-    * Frontend: Vercel (as per demo link)
-    * Backend: AWS EC2 and RDS
