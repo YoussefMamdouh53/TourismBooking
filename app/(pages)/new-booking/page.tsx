@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import BookingForm from '@/components/booking/BookingForm';
 import { fetchDestinations } from '@/services/apiService';
@@ -23,7 +23,6 @@ export default function NewBookingPage() {
         setDestinations(fetchedDestinations);
         setError(null);
       } catch (err: any) {
-        console.log("Fetched destinations:", destinations);
         setError(err.message || "Could not load destinations.");
         setDestinations([]);
       } finally {
