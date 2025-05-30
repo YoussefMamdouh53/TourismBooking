@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 
 
 interface DestinationDetailPageProps {
-  params: Promise<{ id: number }>;
+  params: Promise<{id: number }>;
 }
 
 export default async function DestinationDetailPage({ params }: DestinationDetailPageProps) {

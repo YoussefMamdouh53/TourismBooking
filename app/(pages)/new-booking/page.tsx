@@ -23,7 +23,7 @@ export default function NewBookingPage() {
         setDestinations(fetchedDestinations);
         setError(null);
       } catch (err: any) {
-        console.error("Failed to load destinations for booking form:", err);
+        console.log("Fetched destinations:", destinations);
         setError(err.message || "Could not load destinations.");
         setDestinations([]);
       } finally {
